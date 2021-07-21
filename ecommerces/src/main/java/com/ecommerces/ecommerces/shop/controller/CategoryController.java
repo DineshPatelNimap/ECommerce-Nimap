@@ -28,16 +28,19 @@ public class CategoryController {
 	
 	@GetMapping("/{id}")
 	public CategoryDetails fetchCategoryById(@PathVariable("id") Long categoryId){
+		log.info("Customer Data Fetched");
 		return categoryService.fetchCategoryById(categoryId);
 	}
 	
 	@PutMapping("/{id}")
 	public CategoryDetails updateCategoryById(@PathVariable("id") Long categoryId,@RequestBody CategoryDetails categoryDetails){
+		log.info("Customer Data Updated");
 		return categoryService.updateCategoryById(categoryId,categoryDetails);
 	}
 	
 	@DeleteMapping("/{id}")
 	public String deleteCategoryById(@PathVariable("id") Long categoryId) {
+		log.info("Customer Data Deleted");
 		return categoryService.deleteCategoryById(categoryId);
 	}
 }

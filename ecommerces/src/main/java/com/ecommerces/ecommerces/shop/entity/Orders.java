@@ -27,11 +27,20 @@ public class Orders {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long orderID;
 	
-	@Column(name = "order_amount")
-	private String orderAmount;
+	@Column(name = "prod_id")
+	private Long  productID;
 	
 	@Column(name = "cust_id")
-	private String customerId;    
+	private Long customerId; 
+	
+	@Column(name = "prod_price")
+	private String  prodPrice;
+	
+	@Column(name = "order_quantity")
+	private String orderQuantity;
+	
+	@Column(name = "order_amount")
+	private String orderAmount;
 	
 	@Column(name = "created_on")
 	private Date  custCreatedOn;

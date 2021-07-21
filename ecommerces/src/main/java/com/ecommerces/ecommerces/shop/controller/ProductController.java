@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.ecommerces.ecommerces.shop.entity.Products;
 import com.ecommerces.ecommerces.shop.service.ProductService;
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -45,12 +44,13 @@ public class ProductController {
 	
 	@PutMapping("/{id}")
 	public Products updateProductById(@PathVariable("id") Long productID, @RequestBody Products product) {
-		log.info("Product is Updated");
+		log.info("Product is Updated by Id");
 		return productService.updateProductById(productID,product); 
 	}
 	
 	@DeleteMapping("/{id}")
-	public String deleteProductById(@PathVariable("id") Long prodID){
+	public String deleteProductById(@PathVariable("id") Long prodID) {
+		log.info("Product is Deleted by Id");
 		return productService.deleteProductById(prodID);
 	}
 }
