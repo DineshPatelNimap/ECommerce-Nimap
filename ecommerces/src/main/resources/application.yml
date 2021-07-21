@@ -1,0 +1,23 @@
+#E-Commerces
+server:
+  port : 8580
+  
+spring:
+  application:
+    name: E-Commerces
+  profiles:
+    active: eShop 
+
+---    
+    
+spring:
+    profiles: eShop
+    datasource:
+      url : jdbc:mysql://localhost:3306/eshop
+      username : root
+      password : duster
+      driver-class-name : com.mysql.cj.jdbc.Driver
+    jpa:
+      hibernate:
+       ddl-auto : update
+      show-sql: true
